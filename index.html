@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>TN76 Moto Point — Bike Accessories, Surandai</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0907;--card:#14110c;--gold:#d4af37;--gold2:#f3d98b;--tx:#f4eee0;--mut:#a79f8c;--line:rgba(212,175,55,.25);--serif:'Cormorant Garamond',Georgia,serif;color-scheme:dark}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--tx);font:400 16px/1.6 Inter,system-ui,sans-serif;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.gold{background:linear-gradient(120deg,var(--gold2),var(--gold) 50%,#9c7a1b);-webkit-background-clip:text;background-clip:text;color:transparent}
+.cap{font:600 11px Inter;letter-spacing:.28em;text-transform:uppercase;color:var(--gold)}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1}
+header{position:fixed;inset:0 0 auto;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:calc(14px + env(safe-area-inset-top)) 5vw 14px;background:linear-gradient(rgba(10,9,7,.94),transparent);backdrop-filter:blur(6px)}
+.logo{font:700 26px var(--serif);letter-spacing:.12em}.logo small{display:block;font:600 8px Inter;letter-spacing:.4em;color:var(--gold)}
+header nav{display:flex;gap:26px;align-items:center}header nav a{font-size:13px;letter-spacing:.12em;text-transform:uppercase;opacity:.75}header nav a:hover{opacity:1;color:var(--gold)}
+.cartbtn{border:1px solid var(--gold);color:var(--gold);background:none;padding:9px 18px;border-radius:99px;font:600 12px Inter;letter-spacing:.14em;cursor:pointer}.cartbtn b{background:var(--gold);color:#000;border-radius:99px;padding:1px 8px;margin-left:6px}
+@media(max-width:760px){header nav a{display:none}}
+#hero{position:relative;min-height:100vh;min-height:100svh;display:grid;place-items:center;text-align:center;padding:14vh 6vw 8vh;overflow:hidden}
+.glow{position:absolute;width:60vmax;height:60vmax;border-radius:50%;background:radial-gradient(circle,rgba(212,175,55,.28),transparent 62%);left:0;top:0;transform:translate(calc(var(--x,50vw) - 50%),calc(var(--y,40vh) - 50%));pointer-events:none}
+.ghost{position:absolute;inset:auto 0 6vh;font:700 clamp(140px,34vw,520px)/.8 var(--serif);color:transparent;-webkit-text-stroke:1px rgba(212,175,55,.2);pointer-events:none}
+.hc{position:relative;z-index:2;max-width:900px}
+h1{font-size:clamp(50px,10vw,138px);margin:20px 0}h1 em{font-style:italic}
+.hc p{color:var(--mut);max-width:560px;margin:0 auto 34px;font-size:17px}
+.btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-block;padding:16px 32px;border-radius:99px;font:600 12px Inter;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;border:1px solid var(--gold);transition:.3s;text-align:center}
+.btn.f{background:linear-gradient(120deg,var(--gold2),var(--gold));color:#120e02;border:0}.btn.f:hover{transform:translateY(-3px);box-shadow:0 12px 34px rgba(212,175,55,.35)}.btn.o{background:none;color:var(--gold)}
+.rate{display:inline-flex;gap:10px;border:1px solid var(--line);padding:8px 18px;border-radius:99px;font-size:13px;color:var(--gold2)}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));border-block:1px solid var(--line);background:var(--card)}
+.strip div{padding:26px 5vw;border-right:1px solid var(--line)}.strip div:last-child{border:0}.strip p{margin-top:6px;font-size:14px}
+section{padding:12vh 5vw}
+.head{text-align:center;margin-bottom:6vh}.head h2{font-size:clamp(40px,6.5vw,88px);margin-top:12px}
+.tabs{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:5vh}
+.tab{background:none;border:1px solid var(--line);color:var(--mut);padding:9px 20px;border-radius:99px;font:600 12px Inter;letter-spacing:.12em;text-transform:uppercase;cursor:pointer}.tab.on{background:var(--gold);color:#000;border-color:var(--gold)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:22px;max-width:1200px;margin:auto}
+.p{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;transition:.4s;position:relative}.p:hover{transform:translateY(-8px);border-color:var(--gold);box-shadow:0 20px 50px rgba(0,0,0,.6)}
+.art{height:170px;border-radius:12px;display:grid;place-items:center;font-size:78px;background:radial-gradient(circle at 50% 40%,rgba(212,175,55,.3),rgba(212,175,55,.04) 70%);margin-bottom:18px}
+.art{overflow:hidden}.art img{width:100%;height:100%;object-fit:cover}.art.ph{font:700 46px var(--serif);letter-spacing:.12em;color:rgba(212,175,55,.45)}.th{width:46px;height:46px;border-radius:8px;object-fit:cover;background:rgba(212,175,55,.18);flex:none;display:block}.up{grid-column:1/-1;display:flex;align-items:center;gap:14px;border:1px dashed var(--gold);border-radius:10px;padding:12px;cursor:pointer;color:var(--gold2)}.up img{width:56px;height:56px;object-fit:cover;border-radius:8px}
+.p h3{font-size:28px}.p small{color:var(--mut);display:block;margin:4px 0 16px;font-size:13px}
+.row{display:flex;justify-content:space-between;align-items:center}.pr{font:600 26px var(--serif);color:var(--gold2)}
+.add{background:none;border:1px solid var(--gold);color:var(--gold);width:42px;height:42px;border-radius:50%;font-size:22px;cursor:pointer}.add:hover{background:var(--gold);color:#000}
+.tag{position:absolute;top:16px;left:16px;background:var(--gold);color:#000;font:700 9px Inter;letter-spacing:.14em;padding:4px 10px;border-radius:99px;text-transform:uppercase}
+.note{text-align:center;color:var(--mut);font-size:12px;margin-top:28px}
+#why{background:var(--card);border-block:1px solid var(--line)}
+.why{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:40px;max-width:1100px;margin:auto;text-align:center}.why i{font-style:normal;font-size:38px;display:block;margin-bottom:14px}.why h3{font-size:30px;margin-bottom:8px}.why p{color:var(--mut);font-size:14px}
+.rev{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;max-width:1100px;margin:auto}
+.r{border:1px solid var(--line);border-radius:18px;padding:28px;background:linear-gradient(160deg,var(--card),transparent)}.r q{display:block;font:italic 500 25px/1.3 var(--serif);margin:12px 0 20px}.r b{display:block}.r span{color:var(--mut);font-size:12px}
+.stars{color:var(--gold);letter-spacing:4px}.big{font:500 clamp(70px,12vw,150px)/1 var(--serif);text-align:center}
+.visit{display:grid;grid-template-columns:1fr 1fr;gap:6vw;max-width:1100px;margin:auto;align-items:center}@media(max-width:800px){.visit{grid-template-columns:1fr}}
+.visit h2{font-size:clamp(40px,6vw,80px);margin:12px 0 20px}.visit p{color:var(--mut);margin-bottom:8px}.visit p b{color:var(--tx)}
+.map{aspect-ratio:1;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;text-align:center;padding:30px;background:radial-gradient(circle,rgba(212,175,55,.18),transparent 70%);max-width:380px;margin:auto}.map span{font:700 44px var(--serif)}
+footer{text-align:center;padding:50px 5vw calc(110px + env(safe-area-inset-bottom));border-top:1px solid var(--line);color:var(--mut);font-size:13px}footer button{background:none;border:0;color:var(--mut);text-decoration:underline;cursor:pointer;font:inherit;margin-left:10px}
+.rv{opacity:0;transform:translateY(40px);transition:opacity .9s,transform .9s}.rv.in{opacity:1;transform:none}
+#ov{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:60;opacity:0;pointer-events:none;transition:.3s}#ov.on{opacity:1;pointer-events:auto}
+#dr{position:fixed;top:0;right:0;bottom:0;width:min(420px,100vw);background:#100e09;border-left:1px solid var(--gold);z-index:70;transform:translateX(100%);transition:.4s;display:flex;flex-direction:column;padding:calc(24px + env(safe-area-inset-top)) 24px calc(24px + env(safe-area-inset-bottom))}#dr.on{transform:none}
+.dh{font:500 34px var(--serif);display:flex;justify-content:space-between;margin-bottom:18px}.dh button{background:none;border:0;color:var(--tx);font-size:28px;cursor:pointer}
+#items{flex:1;overflow:auto}.ci{display:flex;gap:12px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line)}.ci em{font-style:normal;font-size:30px}.ci div{flex:1}.ci small{color:var(--mut)}
+.q{display:flex;gap:10px;align-items:center}.q button{width:28px;height:28px;border-radius:50%;border:1px solid var(--gold);background:none;color:var(--gold);cursor:pointer}
+.tot{display:flex;justify-content:space-between;font:600 28px var(--serif);padding:18px 0}
+.fab{position:fixed;z-index:40;right:18px;bottom:calc(18px + env(safe-area-inset-bottom));background:#25d366;color:#04210f;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;font-size:28px;box-shadow:0 10px 30px rgba(37,211,102,.4)}
+/* admin */
+#adm{position:fixed;inset:0;z-index:90;background:var(--bg);overflow:auto;display:none;padding:calc(20px + env(safe-area-inset-top)) 5vw 60px}#adm.on{display:block}
+.aw{max-width:900px;margin:auto}.aw h2{font-size:44px;margin:6px 0 4px}
+.fm{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:22px 0;padding:20px;border:1px solid var(--line);border-radius:16px;background:var(--card)}
+.fm input,.fm select{width:100%;background:#0a0907;border:1px solid var(--line);color:var(--tx);padding:12px;border-radius:10px;font:inherit;font-size:16px}
+.fm .btn{grid-column:1/-1}
+.al{display:flex;align-items:center;gap:14px;padding:12px 0;border-bottom:1px solid var(--line)}.al em{font-style:normal;font-size:28px}.al div{flex:1}.al small{color:var(--mut)}
+.al button{background:none;border:1px solid var(--line);color:var(--tx);padding:8px 14px;border-radius:99px;cursor:pointer;font:600 11px Inter;letter-spacing:.1em;text-transform:uppercase}.al .del{border-color:#c0392b;color:#ff7b6b}
+.msg{margin:10px 0;color:var(--gold2);font-size:14px;min-height:20px}
+#pin{max-width:320px;margin:20vh auto;text-align:center}#pin input{width:100%;background:var(--card);border:1px solid var(--gold);color:var(--tx);padding:14px;border-radius:12px;font-size:20px;text-align:center;letter-spacing:.4em;margin:18px 0}
+@media(max-width:600px){section{padding:9vh 4vw}.grid{grid-template-columns:1fr 1fr;gap:12px}.p{padding:12px;border-radius:14px}.p:hover{transform:none}.art{height:120px;margin-bottom:12px}.art.ph{font-size:28px}.p h3{font-size:20px;line-height:1.1}.p small{font-size:11px;margin:4px 0 10px}.pr{font-size:20px}.add{width:36px;height:36px}.tag{top:10px;left:10px;font-size:8px}.tabs{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;padding-bottom:6px;scrollbar-width:none}.tab{white-space:nowrap}.fm{grid-template-columns:1fr 1fr}.hc p{font-size:15px}}
+</style>
+</head>
+<body>
+<header><a class="logo" href="#hero">TN76<small>MOTO POINT</small></a>
+<nav><a href="#shop">Collection</a><a href="#why">Why us</a><a href="#reviews">Reviews</a><a href="#visit">Visit</a><button class="cartbtn" id="cb">BAG<b id="cc">0</b></button></nav></header>
+
+<section id="hero"><div class="glow" id="glow"></div><div class="ghost">TN76</div>
+<div class="hc"><span class="rate">★★★★★ &nbsp;5.0 · Loved by Surandai riders</span>
+<h1><span class="gold">Ride.</span> Protect.<br><em class="gold">Style.</em></h1>
+<p>Premium helmets, riding gear and bike accessories — genuine quality and honest service at Surandai’s favourite moto counter.</p>
+<div class="btns"><a class="btn f" href="#shop">Shop the collection</a><a class="btn o" href="https://wa.me/919585023258" target="_blank" rel="noopener">Order on WhatsApp</a></div></div></section>
+
+<div class="strip"><div><span class="cap">Find us</span><p>S.V. Karai Govt Hr Sec School, Senkottai Road, Surandai 627859</p></div><div><span class="cap">Call</span><p><a href="tel:+919585023258">095850 23258</a></p></div><div><span class="cap">Opens</span><p>Opens at 9 AM</p></div></div>
+
+<section id="shop"><div class="head rv"><span class="cap">The collection</span><h2>Gear for <em class="gold">every ride</em></h2></div>
+<div class="tabs" id="tabs"></div><div class="grid" id="grid"></div>
+<p class="note">Sample prices — the shop owner can update everything from the Admin panel.</p></section>
+
+<section id="why"><div class="why">
+<div class="rv"><i>🪖</i><h3>Safety first</h3><p>Helmets and gear chosen to protect you on every road.</p></div>
+<div class="rv"><i>✨</i><h3>Genuine quality</h3><p>Customers call it “good quality” — we keep it that way.</p></div>
+<div class="rv"><i>🤝</i><h3>Honest service</h3><p>Warm, personal advice to fit your bike and your budget.</p></div></div></section>
+
+<section id="reviews"><div class="head rv"><span class="cap">What Surandai says</span><div class="big gold">5.0</div><div class="stars">★★★★★</div><p style="color:var(--mut);margin-top:6px">4 Google reviews</p></div>
+<div class="rev">
+<div class="r rv"><div class="stars">★★★★★</div><q>Good service and quality 👌</q><b>Anusha Chandran</b><span>2 months ago · Google review</span></div>
+<div class="r rv"><div class="stars">★★★★★</div><q>Good customer service, good quality 👍😊</q><b>S M T Selvan-Nadar</b><span>Local Guide · a year ago · Google review</span></div>
+<div class="r rv"><div class="stars">★★★★★</div><q>Rated us five stars.</q><b>Archana Thenraj</b><span>3 years ago · Google review</span></div></div></section>
+
+<section id="visit"><div class="visit"><div class="rv"><span class="cap">Visit the store</span><h2>Come <em class="gold">say hello</em></h2>
+<p><b>Address</b><br>S.V. Karai Govt Hr Sec School, Senkottai Road, opposite Surandai, Tamil Nadu 627859</p>
+<p><b>Phone</b><br><a href="tel:+919585023258">095850 23258</a></p><p><b>Plus code</b><br>XCJ6+6V Surandai</p>
+<div class="btns" style="justify-content:flex-start;margin-top:24px"><a class="btn f" href="https://www.google.com/maps/search/?api=1&query=TN76+Moto+Point+Surandai" target="_blank" rel="noopener">Get directions</a><a class="btn o" href="tel:+919585023258">Call now</a></div></div>
+<div class="map rv"><div><span class="gold">TN76</span><p class="cap" style="margin-top:8px">Moto Point · Surandai</p></div></div></div></section>
+
+<footer><div class="logo" style="margin-bottom:10px">TN76<small>MOTO POINT</small></div>© 2026 TN76 Moto Point, Surandai.<button id="ab">Admin</button></footer>
+<a class="fab" href="https://wa.me/919585023258" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+
+<div id="ov"></div>
+<aside id="dr"><div class="dh">Your bag <button id="x">×</button></div><div id="items"></div><div class="tot"><span>Total</span><span id="tt">₹0</span></div><a class="btn f" id="ord" target="_blank" rel="noopener">Order on WhatsApp</a></aside>
+
+<div id="adm"><div class="aw">
+<div id="pin"><h2>Admin</h2><p style="color:var(--mut)">Enter the shop PIN</p><input id="pi" type="password" inputmode="numeric" maxlength="8" autocomplete="off"><button class="btn f" id="pg" style="width:100%">Unlock</button><p class="msg" id="pm"></p><button class="btn o" id="pc" style="width:100%;margin-top:6px">Close</button></div>
+<div id="panel" style="display:none">
+<div class="row"><span class="cap">TN76 Moto Point</span><button class="btn o" id="ac" style="padding:10px 20px">Close ✕</button></div>
+<h2>Product manager</h2><p style="color:var(--mut)">Add, edit or delete products. Changes show on the shop instantly.</p>
+<div class="fm"><input id="fn" placeholder="Product name"><input id="fp" type="number" min="0" placeholder="Price ₹"><input id="fu" placeholder="Size / pack (e.g. Medium)"><input id="fc" list="cl" placeholder="Category"><datalist id="cl"></datalist>
+<label class="up"><input id="ff" type="file" accept="image/*" hidden><img id="fv" alt="" style="display:none"><span id="ft2">+ Upload product photo</span></label><input id="ft" placeholder="Badge (optional, e.g. New)"><button class="btn f" id="fs">Add product</button></div>
+<p class="msg" id="am"></p><div id="al"></div></div></div></div>
+
+<script>
+const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const ADMIN_PIN='7676'; // change this PIN
+const DEF=[
+['Full-Face Helmet','Large',1800,'Helmets','🪖','Bestseller'],['Open-Face Helmet','Medium',1200,'Helmets','🪖',''],['Riding Gloves','Pair',450,'Riding Gear','🧤',''],
+['Riding Jacket','XL',2400,'Riding Gear','🧥','New'],['Mobile Holder','Universal',350,'Accessories','📱',''],['LED Fog Lights','Pair',900,'Accessories','🔦','Popular'],
+['Disc Brake Lock','Steel',400,'Accessories','🔒',''],['Rear-View Mirror','Pair',250,'Accessories','🪞',''],['Chain Lube Spray','250 ml',220,'Care & Spares','🧴',''],['Engine Oil','1 L',480,'Care & Spares','🛢️','']
+].map((a,i)=>({id:'d'+i,n:a[0],u:a[1],p:a[2],c:a[3],e:a[4],t:a[5],ts:i}));
+let rows=DEF,cat='All',cart={},coll=null,admin=false;
+try{const l=JSON.parse(localStorage.getItem('tn76p')||'null');if(Array.isArray(l)&&l.length)rows=l}catch(e){}
+const art=x=>x.img?`<div class="art"><img src="${esc(x.img)}" alt="${esc(x.n)}" loading="lazy"></div>`:'<div class="art ph">TN76</div>',th=x=>x.img?`<img class="th" src="${esc(x.img)}" alt="">`:'<span class="th"></span>';
+const sorted=()=>[...rows].sort((a,b)=>(a.ts||0)-(b.ts||0));
+function shop(){const cats=['All',...new Set(rows.map(x=>x.c))];if(!cats.includes(cat))cat='All';
+$('#tabs').innerHTML=cats.map(c=>`<button class="tab${c===cat?' on':''}" data-c="${esc(c)}">${esc(c)}</button>`).join('');
+$('#grid').innerHTML=sorted().filter(x=>cat==='All'||x.c===cat).map(x=>`<div class="p">${x.t?`<span class="tag">${esc(x.t)}</span>`:''}${art(x)}<h3>${esc(x.n)}</h3><small>${esc(x.u)} · ${esc(x.c)}</small><div class="row"><span class="pr">₹${+x.p}</span><button class="add" data-id="${esc(x.id)}" aria-label="Add">+</button></div></div>`).join('');
+bag();if(admin)alist()}
+$('#tabs').onclick=e=>{if(e.target.dataset.c){cat=e.target.dataset.c;shop()}};
+$('#grid').onclick=e=>{const id=e.target.dataset.id;if(id){cart[id]=(cart[id]||0)+1;bag()}};
+function bag(){const l=Object.entries(cart).map(([id,q])=>({...rows.find(x=>x.id===id),q})).filter(x=>x.n&&x.q>0);
+const n=l.reduce((a,x)=>a+x.q,0),t=l.reduce((a,x)=>a+x.q*x.p,0);$('#cc').textContent=n;$('#tt').textContent='₹'+t;
+$('#items').innerHTML=l.length?l.map(x=>`<div class="ci">${th(x)}<div>${esc(x.n)}<br><small>${esc(x.u)} · ₹${+x.p}</small></div><div class="q"><button data-m="${esc(x.id)}">−</button>${x.q}<button data-a="${esc(x.id)}">+</button></div></div>`).join(''):'<p style="color:var(--mut);padding:20px 0">Your bag is empty.</p>';
+$('#ord').href='https://wa.me/919585023258?text='+encodeURIComponent('Hello TN76 Moto Point, I would like to order:\n'+l.map(x=>`• ${x.n} (${x.u}) × ${x.q} = ₹${x.q*x.p}`).join('\n')+`\nTotal: ₹${t}`)}
+$('#items').onclick=e=>{const a=e.target.dataset.a,m=e.target.dataset.m;if(a)cart[a]++;if(m)cart[m]--;bag()};
+const tg=o=>{$('#dr').classList.toggle('on',o);$('#ov').classList.toggle('on',o)};$('#cb').onclick=()=>tg(true);$('#x').onclick=$('#ov').onclick=()=>tg(false);
+
+// ---- storage: shared database when available, else this browser only ----
+const say=t=>{$('#am').textContent=t;setTimeout(()=>{if($('#am').textContent===t)$('#am').textContent=''},4000)};
+const keep=()=>{try{localStorage.setItem('tn76p',JSON.stringify(rows))}catch(e){}};
+async function save(o){if(coll){try{await coll.doc(o.id).set(o)}catch(e){say('Could not save — only the shop owner can change products.');return false}}else{rows=rows.filter(x=>x.id!==o.id).concat(o);keep();shop()}return true}
+async function seed(){if(coll&&rows.every(x=>/^d\d+$/.test(x.id)))for(const r of DEF)try{await coll.doc(r.id).set(r)}catch(e){}}
+async function remove(id){if(coll){try{await coll.doc(id).delete()}catch(e){say('Could not delete — only the shop owner can change products.')}}else{rows=rows.filter(x=>x.id!==id);delete cart[id];keep();shop()}}
+(async()=>{try{const c=await Promise.race([window.claude?.use('db'),new Promise(r=>setTimeout(r,8000))]);if(!c)return;coll=c.collection('products');
+coll.onSnapshot(s=>{if(s.size){rows=s.docs.map(d=>({id:d.id,...d.data()}))}shop()},()=>{})}catch(e){}})();
+
+// ---- admin ----
+let pend=null;
+const prev=s=>{const v=$('#fv');v.src=s||'';v.style.display=s?'block':'none';$('#ft2').textContent=s?'Change photo':'+ Upload product photo'};
+$('#ff').onchange=e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{const im=new Image();im.onload=()=>{const k=Math.min(1,640/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=Math.round(im.width*k);c.height=Math.round(im.height*k);c.getContext('2d').drawImage(im,0,0,c.width,c.height);pend=c.toDataURL('image/jpeg',.78);prev(pend)};im.src=r.result};r.readAsDataURL(f)};
+function alist(){$('#cl').innerHTML=[...new Set(rows.map(x=>x.c))].map(c=>`<option value="${esc(c)}">`).join('');
+$('#al').innerHTML=sorted().map(x=>`<div class="al">${th(x)}<div>${esc(x.n)}<br><small>${esc(x.u)} · ${esc(x.c)} · ₹${+x.p}${x.t?' · '+esc(x.t):''}</small></div><button data-ed="${esc(x.id)}">Edit</button><button class="del" data-dl="${esc(x.id)}">Delete</button></div>`).join('')||'<p style="color:var(--mut)">No products yet.</p>'}
+let editId=null;
+const clear=()=>{editId=null;pend=null;prev('');$('#ff').value='';['fn','fp','fu','fc','ft'].forEach(i=>$('#'+i).value='');$('#fs').textContent='Add product'};
+$('#ab').onclick=()=>{$('#adm').classList.add('on');$('#pin').style.display=admin?'none':'block';$('#panel').style.display=admin?'block':'none';if(admin)alist()};
+$('#pc').onclick=$('#ac').onclick=()=>$('#adm').classList.remove('on');
+$('#pg').onclick=()=>{if($('#pi').value===ADMIN_PIN){admin=true;$('#pi').value='';$('#pin').style.display='none';$('#panel').style.display='block';alist()}else $('#pm').textContent='Wrong PIN'};
+$('#pi').onkeydown=e=>{if(e.key==='Enter')$('#pg').click()};
+$('#fs').onclick=async()=>{const n=$('#fn').value.trim(),p=+$('#fp').value;if(!n||!(p>=0)||$('#fp').value===''){say('Enter a name and a price.');return}
+const old=rows.find(x=>x.id===editId);await seed();
+const o={id:editId||'p'+Date.now(),n,p,u:$('#fu').value.trim(),c:$('#fc').value.trim()||'Accessories',img:pend!==null?pend:(old&&old.img)||'',t:$('#ft').value.trim(),ts:old?old.ts:Date.now()};
+if(await save(o)){say(editId?'Product updated.':'Product added.');clear()}};
+$('#al').onclick=async e=>{const d=e.target.dataset.dl,ed=e.target.dataset.ed;
+if(d&&confirm('Delete this product?')){await seed();await remove(d)}
+if(ed){const x=rows.find(r=>r.id===ed);editId=ed;$('#fn').value=x.n;$('#fp').value=x.p;$('#fu').value=x.u||'';$('#fc').value=x.c;pend=null;prev(x.img||'');$('#ft').value=x.t||'';$('#fs').textContent='Save changes';scrollTo({top:0,behavior:'smooth'})}};
+shop();
+
+// spotlight + reveal
+const gl=$('#glow');let tx=innerWidth/2,ty=innerHeight*.4,cx=tx,cy=ty,idle=0;
+addEventListener('pointermove',e=>{tx=e.clientX;ty=e.clientY;idle=0});
+(function f(t){idle++;if(idle>200){tx=innerWidth*(.5+.2*Math.sin(t/1600));ty=innerHeight*(.4+.12*Math.cos(t/1200))}cx+=(tx-cx)*.08;cy+=(ty-cy)*.08;gl.style.setProperty('--x',cx+'px');gl.style.setProperty('--y',cy+'px');requestAnimationFrame(f)})(0);
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
